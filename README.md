@@ -88,7 +88,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D WITH_OPENGL=ON \
     -D BUILD_EXAMPLES=ON \
     ../opencv/
-make
+make -j 4    # assume you have a 4-core CPU
 ```
 
 You may encounter compilation errors due to the newer
