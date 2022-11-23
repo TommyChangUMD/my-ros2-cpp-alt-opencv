@@ -72,7 +72,7 @@ mv opencv-3.4.0 opencv
 mv opencv_contrib-3.4.0 opencv_contrib
 ```
 
-Then, compile.  
+Then, compile:
 
 ```
 mkdir build
@@ -86,7 +86,9 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D WITH_QT=ON \
     -D WITH_GTK=OFF \
     -D WITH_OPENGL=ON \
-    -D BUILD_EXAMPLES=ON ../opencv/
+    -D BUILD_EXAMPLES=ON \
+    ../opencv/
+make
 ```
 
 You may encounter compilation errors due to the newer
