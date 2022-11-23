@@ -1,6 +1,6 @@
-#
-# https://github.com/thedancomplex/cpp-boilerplate/blob/lesson/opencv/app/main.cpp
-#
+/*
+ * https://github.com/thedancomplex/cpp-boilerplate/blob/lesson/opencv/app/main.cpp
+ */
 
 #include "opencv2/imgproc.hpp"
 #include "opencv2/highgui.hpp"

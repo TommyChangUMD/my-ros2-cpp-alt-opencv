@@ -16,14 +16,15 @@ find_package(rclpy REQUIRED)
 
 # Find OpenCV dependencies:
 if (USE_ALT_OPENCV)
-# option2: use specific OpencCV 3.4.0 installed in ~/opencv3/install
+  # option2: use specific OpencCV 3.4.0 installed in ~/opencv3/install
   set(opencv3_install_dir "~/opencv3/install/")
+  include(FindPkgConfig)
   find_package(OpenCV 3.4.0 EXACT REQUIRED PATHS "${opencv3_install_dir}/share/OpenCV/")
   set(ENV{PKG_CONFIG_PATH} "${opencv3_install_dir}/lib/pkgconfig/")
   pkg_search_module(OpenCV REQUIRED opencv=3.4.0)
   set(OpenCV_LIBRARIES ${OpenCV_LINK_LIBRARIES})
 else()
-# option1: default to use system OpenCV
+  # option1: default to use system OpenCV
   find_package(OpenCV)
 endif()
 
