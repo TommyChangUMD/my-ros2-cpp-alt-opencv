@@ -6,6 +6,7 @@ opencv installation at the end.
 
 ## How to Compile the ROS2 package
 
+First, put the source code tree directory inside your ROS2 workspace's `src/` directory.
 
 ### Option 1: Use system's OpenCV
 
@@ -16,9 +17,8 @@ colcon build --packages-select my-ros2-cpp-alt-opencv
 
 ### Option 2: Use locally installed OpenCV
 
-First, put the source code to your ROS2 workspace.  Then, modify
-CMakeLists.txt and replace the path below with your local opencv's
-installation directory.
+Modify `CMakeLists.txt` and replace the path below with your local
+opencv's installation directory.
 
 ```
   set(opencv3_install_dir "~/opencv3/install/")
