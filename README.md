@@ -10,7 +10,7 @@ First, put the source code to your ROS2 workspace.  Then, modify
 CMakeLists.txt and replace the below:
 
 ```
-  set(opencv3_install_dir "/home/tchang/opencv3/install/")
+  set(opencv3_install_dir "~/opencv3/install/")
 ```
 
 with your local opencv's installation directory.
@@ -19,19 +19,21 @@ with your local opencv's installation directory.
 ### Option 1: Use system's OpenCV
 
 ```
+rm -rf build/my-ros2-cpp-alt-opencv
 colcon build --packages-select my-ros2-cpp-alt-opencv
 ```
 
 ### Option 2: Use locally installed OpenCV
 
 ```
+rm -rf build/my-ros2-cpp-alt-opencv
 colcon build --packages-select my-ros2-cpp-alt-opencv --cmake-args -DUSE_ALT_OPENCV=1 
 ```
 
 
 ## How to Run:
 
-### Option 1: Use system's OpenCV
+### Option 1: Built with system's OpenCV
 
 ```
 # source ROS 2 workspace environment
@@ -41,7 +43,7 @@ source install/setup.bash
 ros2 run my-ros2-cpp-alt-opencv my_opencv
 ```
 
-### Option 2: Use locally installed OpenCV
+### Option 2: Built with locally installed OpenCV
 
 Make sure you change example below with your locally installed opencv directory.
 
@@ -50,7 +52,7 @@ Make sure you change example below with your locally installed opencv directory.
 source install/setup.bash
 
 # run the executable with the LD_LIBRARY_PATH prefix.  Remember to
-# replace "~/opencv3/install" with your local opencv installation directory
+# replace "~/opencv3/install" with your local opencv installation directory.
 LD_LIBRARY_PATH=~/opencv3/install/lib/:$LD_LIBRARY_PATH \
   ros2 run my-ros2-cpp-alt-opencv my_opencv
 ```
