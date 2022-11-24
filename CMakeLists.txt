@@ -44,22 +44,23 @@ endif()
 
 # Define executables:
 add_executable(my_opencv src/main.cpp)
-target_link_libraries(my_opencv
+target_link_libraries(
+  my_opencv
   ${OpenCV_LIBRARIES}
   )
 
-
-include_directories(
-    ${CMAKE_SOURCE_DIR}/include
-    ${OpenCV_INCLUDE_DIRS}
-)
+target_include_directories(
+  my_opencv
+  PUBLIC ${CMAKE_SOURCE_DIR}/include
+  PUBLIC ${OpenCV_INCLUDE_DIRS}
+  )
 
 
 # Install executables
 install(
   TARGETS my_opencv
   RUNTIME DESTINATION lib/${PROJECT_NAME}
-)
+  )
 
 
 ament_package()
